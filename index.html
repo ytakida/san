@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"> </script>
+
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="SOTAs for one step diffusion model generation.">
+  <meta property="og:title" content="Slicing Adversarial Networks"/>
+  <meta property="og:description" content="SOTAs for one step diffusion model generation."/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/icon.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Slicing Adversarial Networks">
+  <meta name="twitter:description" content="SOTAs for one step diffusion model generation.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/icon.png">
+  <meta name="twitter:card" content="icon.png">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>SAN</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><font color="#ff6a00">SAN</font>: Inducing Metrizability of GAN with Discriminative Normalized Linear Layer</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <span>Yuhta Takida</span><span><sup>1</sup></span>,</span>
+              <span class="author-block">
+                <span>Masaaki Imaizumi</span><span><sup>3</sup></span>,</span>
+              <span class="author-block">
+                <span>Takashi Shibuya</span><span><sup>1</sup></span>,</span><br>
+              <span class="author-block">
+                <span>Chieh-Hsin Lai</span><span><sup>1</sup></span>,</span>
+              <span class="author-block">
+                <span>Toshimitsu Uesaka</span><span><sup>1</sup></span>,</span>
+              <span class="author-block">
+                <span>Naoki Murata</span><span><sup>1</sup></span>,</span>
+              <span class="author-block">
+                <span>Yuki Mitsufuji</span><span><sup>1</sup></span></span>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Sony AI, <sup>2</sup>Sony Group Corporation, <sup>3</sup>The University of Tokyo
+                  </div>
+                  
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2301.12811.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper PDF</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link 
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary </span>
+                    </a>
+                  </span>-->
+
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2301.12811" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/sony/san" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper TL;DR -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">TL;DR</h2>
+        <div class="content has-text-justified">
+          <p>
+            A theoretically sound modification scheme for discriminators, although simple, enhances GAN performance, resulting in a novel class of generative models called <font color="#ff6a00">S</font>licing <font color="#ff6a00">A</font>dversarail <font color="#ff6a00">N</font>etwork. Applying <font color="#ff6a00">SAN</font> to StyleGAN-XL results in SOTA performance on ImageNet 256x256 (FID: 2.14, IS: 274.20).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper TL;DR -->
+
+<br>
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!--<video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video>-->
+      <!-- <span class="eql-cntrb"><small><br><center><img src="static/images/cifar_badge.svg" alt="MY ALT TEXT" width="100%"/></center></small></span> -->
+      <center><img src="static/images/generated_samples.png" alt="MY ALT TEXT" class="center" width="2304" height="1534"/></center>
+      <h2 class="subtitle has-text-centered">
+        Random generated samples by Style<font color="#ff6a00">SAN</font>-XL, trained on ImageNet 256x256.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+
+  
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Generative adversarial networks (GANs) learn a target probability distribution by optimizing a generator and a discriminator with minimax objectives. This paper addresses the question of whether such optimization actually provides the generator with gradients that make its distribution close to the target distribution. We derive metrizable conditions, sufficient conditions for the discriminator to serve as the distance between the distributions, by connecting the GAN formulation with the concept of sliced optimal transport. Furthermore, by leveraging these theoretical results, we propose a novel GAN training scheme called the <font color="#ff6a00"><b>S</b></font>licing <font color="#ff6a00"><b>A</b></font>dversarial <font color="#ff6a00"><b>N</b></font>etwork (<font color="#ff6a00"><b>SAN</b></font>). With only simple modifications, a broad class of existing GANs can be converted to <font color="#ff6a00">SAN</font>s. Experiments on synthetic and image datasets support our theoretical results and the effectiveness of SAN as compared to the usual GANs. We also apply <font color="#ff6a00">SAN</font> to StyleGAN-XL, which leads to a state-of-the-art FID score amongst GANs for class conditional generation on ImageNet 256x256.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">SAN-ify: From GANs to <font color="#ff6a00">SANs</font></h2>
+        <div class="content has-text-justified">
+          <center><img src="static/images/from_gan_to_san.png" alt="MY ALT TEXT" class="center" width="2500" height="1500"/></center>
+        </div>
+        <h2 class="subtitle has-text-centered">
+          All you need to convert GANs to SANs is simple modifications to objectives and last linear layers of discriminators.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"><i>Metrizable</i> conditions</h2>
+        <div class="content has-text-justified">
+          <center><img src="static/images/illustration.png" alt="MY ALT TEXT" class="center" width="2500" height="1500"/></center>
+        </div>
+        <h2 class="subtitle has-text-centered">
+          We introduce a notion of metrizable discriminator to discuss sufficient conditions where discriminators serve as distances between target and generator distributions
+          </ul>
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"><i>Metrizable</i> conditions</h2>
+        <div class="content has-text-justified">
+          <center><img src="static/images/metrizable_conditions.png" alt="MY ALT TEXT" class="center" width="2500" height="1500"/></center>
+        </div>
+        <h2 class="subtitle has-text-centered">
+          Metrizable conditions can be decomposed into (1) <i>direction optimality</i>, (2) <i>separability</i>, and (3) <i>injectivity</i>.
+          There is no existing GANs that satisfy all the conditions simultaneously.
+          The idea behind SANs is inducing all the three conditions by customizing the maximization problem.
+          </ul>
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Training Stage carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Empirical results on Mixture of Gaussian</h2>
+      <div id="results-carousel" class="carousel results-carousel" height="100%" data-interval="false" data-bs-interval="false">
+       <div class="item">
+        <!-- Your image here -->
+        <center><img src="static/images/exp_toy1.png" alt="MY ALT TEXT" width="704" height="469"/></center>
+        <h2 class="subtitle has-text-centered">
+          Comparison of the learned distributions between GAN and SAN with various objectives. In all cases, <font color="#ff6a00">SAN</font>s cover all modes whereas mode collapse occurs in some GAN cases.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <center><img src="static/images/exp_toy2.png" alt="MY ALT TEXT" width="500" height="335"/></center>
+        <h2 class="subtitle has-text-centered">
+          Directions trained by <font color="#ff6a00">SAN</font>s keep to be optimal during the training.
+        </h2>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End Training Stage carousel -->
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">SAN vs. GAN on vision dataset</h2> 
+      <!-- <h2 class="subtitle">
+        <font color="#ff6a00">SAN</font> enables score evaluation -- allows score-based sampling (via solving SDEs or ODEs) and exact likelihood computation. 
+      </h2> -->
+      <div id="results-carousel" class="carousel results-carousel" height="100%" data-interval="false">
+        <div class="item">
+          <!-- Your image here -->
+          <center><img src="static/images/exp_vision_1.png" alt="MY ALT TEXT" width="800" height="550"/></center>
+          <h2 class="subtitle has-text-centered">
+            <font color="#ff6a00">SAN-ification</font> improves generation performance on various GANs.
+          </h2>
+        </div>
+      <div class="item">
+        <!-- Your image here -->
+        <center><img src="static/images/exp_vision_2.png" alt="MY ALT TEXT" width="800" height="550"/></center>
+        <h2 class="subtitle has-text-centered">
+          The effectiveness of <font color="#ff6a00">SAN</font> is verified with the standard GAN architecture.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <center><img src="static/images/exp_vision_3.png" alt="MY ALT TEXT" width="800" height="550"/></center>
+        <h2 class="subtitle has-text-centered">
+          <font color="#ff6a00">SAN</font> boosts even SOTA GANs!
+        </h2>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{takida2023san,
+        title={{SAN}: Inducing Metrizability of GAN with Discriminative Normalized Linear Layer},
+        author={Takida, Yuhta and Imaizumi, Masaaki and Shibuya, Takashi and Lai, Chieh-Hsin and Uesaka, Toshimitsu and Murata, Naoki and Mitsufuji, Yuki},
+        journal={arXiv preprint arXiv:2301.12811},
+        year={2023}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+ <a href='https://www.free-counters.org/'>Free-Counters</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=5fa176c5559ba726be4d7263049fb6e363a5c2af'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1084190/t/5"></script>
+  
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
