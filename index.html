@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="SOTAs for one step diffusion model generation.">
+  <meta name="description" content="General modification scheme to boost general GANs.">
   <meta property="og:title" content="Slicing Adversarial Networks"/>
-  <meta property="og:description" content="SOTAs for one step diffusion model generation."/>
+  <meta property="og:description" content="General modification scheme to boost general GANs."/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/icon.png" />
@@ -17,7 +17,7 @@
 
 
   <meta name="twitter:title" content="Slicing Adversarial Networks">
-  <meta name="twitter:description" content="SOTAs for one step diffusion model generation.">
+  <meta name="twitter:description" content="General modification scheme to boost general GANs.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/icon.png">
   <meta name="twitter:card" content="icon.png">
@@ -54,7 +54,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title"><font color="#ff6a00">SAN</font>: Inducing Metrizability of GAN with Discriminative Normalized Linear Layer</h1>
+            <h1 class="title is-1 publication-title"><font color="#d42f7e">SAN</font>: Inducing Metrizability of GAN with Discriminative Normalized Linear Layer</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -140,7 +140,7 @@
         <h2 class="title is-3">TL;DR</h2>
         <div class="content has-text-justified">
           <p>
-            A theoretically sound modification scheme for discriminators, although simple, enhances GAN performance, resulting in a novel class of generative models called <font color="#ff6a00">S</font>licing <font color="#ff6a00">A</font>dversarail <font color="#ff6a00">N</font>etwork. Applying <font color="#ff6a00">SAN</font> to StyleGAN-XL results in SOTA performance on ImageNet 256x256 (FID: 2.14, IS: 274.20).
+            A theoretically sound modification scheme for discriminators, although simple, enhances GAN performance, resulting in a novel class of generative models called <font color="#d42f7e">S</font>licing <font color="#d42f7e">A</font>dversarail <font color="#d42f7e">N</font>etwork. Applying <font color="#d42f7e">SAN</font> to StyleGAN-XL results in SOTA performance on ImageNet 256x256 (FID: 2.14, IS: 274.20).
           </p>
         </div>
       </div>
@@ -161,7 +161,7 @@
       <!-- <span class="eql-cntrb"><small><br><center><img src="static/images/cifar_badge.svg" alt="MY ALT TEXT" width="100%"/></center></small></span> -->
       <center><img src="static/images/generated_samples.png" alt="MY ALT TEXT" class="center" width="2304" height="1534"/></center>
       <h2 class="subtitle has-text-centered">
-        Random generated samples by Style<font color="#ff6a00">SAN</font>-XL, trained on ImageNet 256x256.
+        Random generated samples by Style<font color="#d42f7e">SAN</font>-XL, trained on ImageNet 256x256.
       </h2>
     </div>
   </div>
@@ -179,7 +179,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Generative adversarial networks (GANs) learn a target probability distribution by optimizing a generator and a discriminator with minimax objectives. This paper addresses the question of whether such optimization actually provides the generator with gradients that make its distribution close to the target distribution. We derive metrizable conditions, sufficient conditions for the discriminator to serve as the distance between the distributions, by connecting the GAN formulation with the concept of sliced optimal transport. Furthermore, by leveraging these theoretical results, we propose a novel GAN training scheme called the <font color="#ff6a00"><b>S</b></font>licing <font color="#ff6a00"><b>A</b></font>dversarial <font color="#ff6a00"><b>N</b></font>etwork (<font color="#ff6a00"><b>SAN</b></font>). With only simple modifications, a broad class of existing GANs can be converted to <font color="#ff6a00">SAN</font>s. Experiments on synthetic and image datasets support our theoretical results and the effectiveness of SAN as compared to the usual GANs. We also apply <font color="#ff6a00">SAN</font> to StyleGAN-XL, which leads to a state-of-the-art FID score amongst GANs for class conditional generation on ImageNet 256x256.
+            Generative adversarial networks (GANs) learn a target probability distribution by optimizing a generator and a discriminator with minimax objectives. This paper addresses the question of whether such optimization actually provides the generator with gradients that make its distribution close to the target distribution. We derive metrizable conditions, sufficient conditions for the discriminator to serve as the distance between the distributions, by connecting the GAN formulation with the concept of sliced optimal transport. Furthermore, by leveraging these theoretical results, we propose a novel GAN training scheme called the <font color="#d42f7e"><b>S</b></font>licing <font color="#d42f7e"><b>A</b></font>dversarial <font color="#d42f7e"><b>N</b></font>etwork (<font color="#d42f7e"><b>SAN</b></font>). With only simple modifications, a broad class of existing GANs can be converted to <font color="#d42f7e">SANs</font>. Experiments on synthetic and image datasets support our theoretical results and the effectiveness of SAN as compared to the usual GANs. We also apply <font color="#d42f7e">SAN</font> to StyleGAN-XL, which leads to a state-of-the-art FID score amongst GANs for class conditional generation on ImageNet 256x256.
           </p>
         </div>
       </div>
@@ -194,7 +194,27 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">SAN-ify: From GANs to <font color="#ff6a00">SANs</font></h2>
+        <h2 class="title is-3">Motivation</h2>
+        <div class="content has-text-justified">
+          <center><img src="static/images/illustration.png" alt="MY ALT TEXT" class="center" width="2500" height="1500"/></center>
+        </div>
+        <h2 class="subtitle has-text-centered">
+          We introduce a notion of <i>metrizable</i> discriminator to discuss sufficient conditions where discriminators serve as distances between the distributions.
+          </ul>
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">SAN-ify: From GANs to <font color="#d42f7e">SANs</font></h2>
         <div class="content has-text-justified">
           <center><img src="static/images/from_gan_to_san.png" alt="MY ALT TEXT" class="center" width="2500" height="1500"/></center>
         </div>
@@ -212,32 +232,14 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3"><i>Metrizable</i> conditions</h2>
-        <div class="content has-text-justified">
-          <center><img src="static/images/illustration.png" alt="MY ALT TEXT" class="center" width="2500" height="1500"/></center>
-        </div>
-        <h2 class="subtitle has-text-centered">
-          We introduce a notion of metrizable discriminator to discuss sufficient conditions where discriminators serve as distances between target and generator distributions
-          </ul>
-        </h2>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3"><i>Metrizable</i> conditions</h2>
+        <h2 class="title is-3"><i>Metrizable</i> Conditions</h2>
         <div class="content has-text-justified">
           <center><img src="static/images/metrizable_conditions.png" alt="MY ALT TEXT" class="center" width="2500" height="1500"/></center>
         </div>
         <h2 class="subtitle has-text-centered">
           Metrizable conditions can be decomposed into (1) <i>direction optimality</i>, (2) <i>separability</i>, and (3) <i>injectivity</i>.
           There is no existing GANs that satisfy all the conditions simultaneously.
-          The idea behind SANs is inducing all the three conditions by customizing the maximization problem.
+          The idea behind SAN is inducing all the three conditions by customizing the maximization problem.
           </ul>
         </h2>
       </div>
@@ -250,20 +252,21 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">Empirical results on Mixture of Gaussian</h2>
+      <h2 class="title"><font color="#d42f7e">SAN</font> vs. GAN on Mixture of Gaussian</h2>
       <div id="results-carousel" class="carousel results-carousel" height="100%" data-interval="false" data-bs-interval="false">
        <div class="item">
         <!-- Your image here -->
         <center><img src="static/images/exp_toy1.png" alt="MY ALT TEXT" width="704" height="469"/></center>
         <h2 class="subtitle has-text-centered">
-          Comparison of the learned distributions between GAN and SAN with various objectives. In all cases, <font color="#ff6a00">SAN</font>s cover all modes whereas mode collapse occurs in some GAN cases.
+          Comparison of the learned distributions between GAN and SAN with various objectives.<br>
+          In all cases, <font color="#d42f7e">SANs</font> cover all modes whereas mode collapse occurs in some GAN cases.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <center><img src="static/images/exp_toy2.png" alt="MY ALT TEXT" width="500" height="335"/></center>
         <h2 class="subtitle has-text-centered">
-          Directions trained by <font color="#ff6a00">SAN</font>s keep to be optimal during the training.
+          Directions trained by <font color="#d42f7e">SANs</font> keep to be optimal during the training.
         </h2>
       </div>
   </div>
@@ -276,30 +279,30 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">SAN vs. GAN on vision dataset</h2> 
+      <h2 class="title"><font color="#d42f7e">SAN</font> vs. GAN on Vision Dataset</h2> 
       <!-- <h2 class="subtitle">
-        <font color="#ff6a00">SAN</font> enables score evaluation -- allows score-based sampling (via solving SDEs or ODEs) and exact likelihood computation. 
+        <font color="#d42f7e">SAN</font> enables score evaluation -- allows score-based sampling (via solving SDEs or ODEs) and exact likelihood computation. 
       </h2> -->
       <div id="results-carousel" class="carousel results-carousel" height="100%" data-interval="false">
         <div class="item">
           <!-- Your image here -->
           <center><img src="static/images/exp_vision_1.png" alt="MY ALT TEXT" width="800" height="550"/></center>
           <h2 class="subtitle has-text-centered">
-            <font color="#ff6a00">SAN-ification</font> improves generation performance on various GANs.
+            <font color="#d42f7e">SAN-ification</font> improves generation performance on various GANs.
           </h2>
         </div>
       <div class="item">
         <!-- Your image here -->
         <center><img src="static/images/exp_vision_2.png" alt="MY ALT TEXT" width="800" height="550"/></center>
         <h2 class="subtitle has-text-centered">
-          The effectiveness of <font color="#ff6a00">SAN</font> is verified with the standard GAN architecture.
+          The effectiveness of <font color="#d42f7e">SAN</font> is verified with the standard GAN architecture.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <center><img src="static/images/exp_vision_3.png" alt="MY ALT TEXT" width="800" height="550"/></center>
         <h2 class="subtitle has-text-centered">
-          <font color="#ff6a00">SAN</font> boosts even SOTA GANs!
+          <font color="#d42f7e">SAN</font> boosts even SOTA GANs!
         </h2>
       </div>
   </div>
